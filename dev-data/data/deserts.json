@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "5f395615d341ba23e1a8c90e",
+    "category": "5f3954ce265f9a5bc24999a8",
+    "category_name": "deserts",
+    "name": "CINNAMON TWIST",
+    "description": "Our crispy, puffed corn twists are sprinkled with cinnamon and sugar and are seriously addictive. If you’re into delicious things, of course.",
+    "fill": "veg",
+    "image": "cinnamon_twist.jpg",
+    "price": "49",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f395659312138cd81701aae",
+    "category": "5f3954ce265f9a5bc24999a8",
+    "category_name": "deserts",
+    "name": "CHOCODILLA",
+    "description": "The Chocolate Avatar of a Quesadilla. Grilled Flour Tortilla with Chocolate Chips - End your Meal on a sweet note.",
+    "fill": "veg",
+    "image": "chocodilla.jpg",
+    "price": "49",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39566008d9050be66ea88f",
+    "category": "5f3954ce265f9a5bc24999a8",
+    "category_name": "deserts",
+    "name": "CHOCO CARAMEL TOSTADAS",
+    "description": "Crispy Crunchy Tostada Chips Loaded with Chocolate & Caramel Sauce with a dollop of Vanilla Ice Cream, sprinkled with cinnamon sugar.",
+    "fill": "veg",
+    "image": "choco_caramel_tostadas.jpg",
+    "price": "49",
+    "quantity": "25"
+  }
+]

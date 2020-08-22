@@ -1,0 +1,11 @@
+.login-page {
+  height: calc(100vh - 14rem);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(#eee, 0.7),
+      rgba(#eee, 0.7)
+    ),
+    url("./background.png");
+  background-size: cover;
+  background-position: center;
+}

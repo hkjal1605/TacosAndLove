@@ -1,0 +1,44 @@
+.login {
+  width: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    #463300,
+    #795900,
+    #ac7e00,
+    #ffbc02
+  );
+  border-radius: 5px;
+  padding: 4.5rem;
+
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
+
+  @media only screen and (max-width: 43.75em) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    width: 96%;
+  }
+}
+
+.login__heading {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 2.5rem;
+  background-image: linear-gradient(to right, #ffdc79, #fff2ce);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.login__button {
+  background-color: #55c57a !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "_id": "5f39f2c2d6980ddf0af37e34",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHEESY GORDITA",
+    "description": "A delicious crunchy taco filled with Paneer in Mexican spices, lettuce, tomatoes and ranch sauce. It's then placed inside a warm soft bread with cheese in the middle.",
+    "fill": "veg",
+    "image": "veg_header_image_1370x650.jpg",
+    "price": "129",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f35a598d8dcc37cc4cfc",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHEESY GORDITA",
+    "description": "A delicious crunchy taco filled with Paneer in Mexican spices, lettuce, tomatoes and ranch sauce. It's then placed inside a warm soft bread with cheese in the middle.",
+    "fill": "non-veg",
+    "image": "nonveg_a_la_carte___banner.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f38cb06811dfb5bdc914",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHEESY GORDITA MEAL FOR 1",
+    "description": "Meal includes one Veg Cheesy Gordita Crunch, one side of choice and one beverage of choice.",
+    "fill": "veg",
+    "image": "veg_mealfor1___banner.jpg",
+    "price": "259",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f3cd5adaa16418149a3b",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHEESY GORDITA MEAL FOR 1",
+    "description": "Meal includes one Veg Cheesy Gordita Crunch, one side of choice and one beverage of choice.",
+    "fill": "non-veg",
+    "image": "nonveg_mealfor1___banner.jpg",
+    "price": "279",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f3f1262ddd5a81dd2b0b",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHALUPA",
+    "description": "Crunchy? Chewy? Both. A crunchy and chewy flatbread filled with choice of veg fillings, reduced-fat sour cream, crisp shredded lettuce, a two- blend cheese and diced ripe tomatoes.",
+    "fill": "veg",
+    "image": "banner-chalupa_veg_.jpg",
+    "price": "129",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f43807c073d69f00a492",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHALUPA",
+    "description": "Crunchy? Chewy? Both. A crunchy and chewy flatbread filled with choice of veg fillings, reduced-fat sour cream, crisp shredded lettuce, a two- blend cheese and diced ripe tomatoes.",
+    "fill": "non-veg",
+    "image": "chalupa_chicken.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f47691bdfd3ee55f8380",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHALUPA MEAL",
+    "description": "One veg chalupa with choice of filling and sauce, one side of choice and unlimited refills on soft drinks (dine-in) / one beverage pet bottle of choice",
+    "fill": "veg",
+    "image": "banner-chalupa_meal_veg_.jpg",
+    "price": "297",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f4b1c6c50624134fbdcb",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHALUPA MEAL",
+    "description": "One veg chalupa with choice of filling and sauce, one side of choice and unlimited refills on soft drinks (dine-in) / one beverage pet bottle of choice",
+    "fill": "non-veg",
+    "image": "1370x650_chickenchalupa.jpg",
+    "price": "307",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f4d70598f1f6177763c1",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "VEGSTAR WRAP",
+    "description": "A unique star shaped warm wrap. It has paneer marinated in bold mexican spices, lettuce, fiesta salsa and two sauces - spicy habanero and creamy nacho cheese",
+    "fill": "veg",
+    "image": "banner-vegstar.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f532a06a6af3e6af1ef0",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHICKSTAR WRAP",
+    "description": "A unique star shaped warm wrap. It has crispy boneless chicken nachos, marinated in bold Mexican spices, lettuce, fiesta salsa and two sauces - spicy habanero and creamy nacho cheese",
+    "fill": "non-veg",
+    "image": "banner-chickstar.jpg",
+    "price": "169",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f5659f3e04e629891458",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "VEGSTAR MEAL FOR 1",
+    "description": "One Vegstar Wrap, One Mexican fries and a beverage of choice",
+    "fill": "veg",
+    "image": "banner-vegstar_meal.jpg",
+    "price": "279",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f5aa78a6bd8993c9dce2",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "CHICKSTAR MEAL FOR 1",
+    "description": "One Chicstar with one Mexican Fries/ Nachos & Salsa and a beverage of your choice",
+    "fill": "non-veg",
+    "image": "banner-chickstar_meal.jpg",
+    "price": "299",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f5dde3942ea825ed1e8d",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "BELL RICE BOWL",
+    "description": "Bell Rice Bowl is rich in flavor with well-cooked Paneer which all the veg lovers will love. A spoon of salsa sauce is put on the top which adds to the overall flavor. This is definitely a must-try dish and not to be missed.",
+    "fill": "veg",
+    "image": "veg_bowl_banner_1370_650.jpg",
+    "price": "189",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f652534ff0ed7d86b721",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "BELL RICE BOWL",
+    "description": "Bell Rice Bowl is rich in flavor with well-cooked Paneer which all the veg lovers will love. A spoon of salsa sauce is put on the top which adds to the overall flavor. This is definitely a must-try dish and not to be missed.",
+    "fill": "non-veg",
+    "image": "non-veg_bowl_banner_1370_650.jpg",
+    "price": "209",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f89d38b8728760c3024c",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "BIG BELL BOX",
+    "description": "The real blockbuster mean comes with one veg Habanero Burrito, one Crunchy Pinto Bean Taco - Hot Sauce, one Mexican Fries, one Cinnamon Twist",
+    "fill": "veg",
+    "image": "1370x650px_big-bill-box_veg1.jpg",
+    "price": "379",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39f8f40ebf0d2d9466d571",
+    "category": "5f36aa9db4090f250c59517b",
+    "category_name": "specialities",
+    "name": "BIG BELL BOX",
+    "description": "The real blockbuster mean comes with one veg Habanero Burrito, one Crunchy Pinto Bean Taco - Hot Sauce, one Mexican Fries, one Cinnamon Twist",
+    "fill": "non-veg",
+    "image": "1370x650px_big-bill-box_nv.jpg",
+    "price": "399",
+    "quantity": "25"
+  }
+]

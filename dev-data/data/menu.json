@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "5f36a8a3f05ee96a4a31f830",
+    "name": "Tacos",
+    "photo": "a_la_carte_wildnct_1370650.jpg",
+    "items": "14"
+  },
+  {
+    "_id": "5f36a9b559d6de92d1347e42",
+    "name": "Burritos",
+    "photo": "banner-7layer_burritos_nonveg_.jpg",
+    "items": "10"
+  },
+  {
+    "_id": "5f36aa9db4090f250c59517b",
+    "name": "Specialities",
+    "photo": "veg_bowl_banner_1370_650.jpg",
+    "items": "16"
+  },
+  {
+    "_id": "5f36aafa5dc9543bd28cdef3",
+    "name": "Quesadilla",
+    "photo": "banner-fajita_veggie_quesadilla.jpg",
+    "items": "3"
+  },
+  {
+    "_id": "5f36ab9d1710ef9e2acc4655",
+    "name": "Sides",
+    "photo": "banner-cheesy_nachos.jpg",
+    "items": "8"
+  },
+  {
+    "_id": "5f3954ce265f9a5bc24999a8",
+    "name": "Deserts",
+    "photo": "choco_caramel_tostadas.jpg",
+    "items": "3"
+  }
+]

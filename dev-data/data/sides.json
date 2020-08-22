@@ -1,0 +1,90 @@
+[
+  {
+    "_id": "5f36abae7d8d0df6d87bb109",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "MEXICAN FRIES",
+    "description": "Our signature fries topped with mexican seasoning.",
+    "fill": "veg",
+    "image": "banner-fries.jpg",
+    "price": "79",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abbcbb1dabce315ba325",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "NACHOS & SALSA",
+    "description": "Our homemade nachos topped with tangy mexican salsa.",
+    "fill": "veg",
+    "image": "banner-nachos_salsa.jpg",
+    "price": "99",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abc3dbead72925d259ae",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "LOADED NACHOS",
+    "description": "Crispy nachos topped with pinto beans, fiesta salsa & our signature nacho cheese sauce ; whoever you are with is not going to stop at just one.",
+    "fill": "veg",
+    "image": "banner-loaded_nachos_veg_.jpg",
+    "price": "139",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abc9f208a7e1586cdc4f",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "LOADED NACHOS",
+    "description": "Loaded Nachos has seasoned chicken, pinto beans, fiesta salsa and our signature nacho cheese sauce, most of that goodness sits on the top.",
+    "fill": "non-veg",
+    "image": "banner-loaded_nachos_nv_.jpg",
+    "price": "159",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abd0645012dc08c63d9f",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "LOADED FRIES",
+    "description": "Seasoned fries topped with our signature nacho cheese sauce , need we say more?",
+    "fill": "veg",
+    "image": "banner-loaded_fries_veg_.jpg",
+    "price": "139",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abd73a3464a649b4ce98",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "CHEESY NACHOS",
+    "description": "Super crispy nachos toped with our signature nacho cheese sauce with diced tomatos & onions.",
+    "fill": "veg",
+    "image": "banner-cheesy_nachos.jpg",
+    "price": "99",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abdd9663992e0ac647f4",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "CRISPY CHICKEN STRIPS",
+    "description": "Who doesn’t like to bite into a golden-brown crispy chicken tender? It goes well with any dip of your choice",
+    "fill": "non-veg",
+    "image": "banner-crispy_chicken_strips.jpg",
+    "price": "119",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f36abe3c0d2b9839ece33f8",
+    "category": "5f36ab9d1710ef9e2acc4655",
+    "category_name": "sides",
+    "name": "CRISPY CHICKEN NACHOS",
+    "description": "Another gem from our innovation engines at Taco Bell - Crispy Chicken Nachos are made up entirely out of chicken kicked up with bold Mexican spices and seasoning. Eat it to believe it.",
+    "fill": "non-veg",
+    "image": "banner-crispy_chicken_nachos.jpg",
+    "price": "159",
+    "quantity": "25"
+  }
+]

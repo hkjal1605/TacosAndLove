@@ -1,0 +1,14 @@
+{
+  "name": "Dominos",
+  "location": {
+    "type": "Point",
+    "address": "Rajouri Garden, New Delhi, 110027",
+    "coordinates": [28.647518, 77.119686]
+  },
+  "type": ["dine-in", "take-away", "online-order"],
+  "delivery_radius": "20",
+  "avg_delivery_time": "60",
+  "logo": "logo.png",
+  "opening_time": "10",
+  "closing_time": "10"
+}

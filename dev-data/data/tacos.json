@@ -1,0 +1,156 @@
+[
+  {
+    "_id": "5f396950d7ee93f15080f0f3",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "SOFT TACO",
+    "description": "The Soft Taco has a warm, flour tortilla. Soft, of course, as you have already probably guessed.",
+    "fill": "veg",
+    "image": "banner-soft_taco_veg_.jpg",
+    "price": "79",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3969c7d59b8ad829e3cb6e",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "SOFT TACO",
+    "description": "The Soft Taco has a warm, flour tortilla. Soft, of course, as you have already probably guessed.",
+    "fill": "non-veg",
+    "image": "banner-soft_taco_nonveg_.jpg",
+    "price": "89",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3969ebb6576d1e0123b06a",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "CRUNCHY TACO",
+    "description": "Its Hard.It's Crunchy. It's Delicious! Our signature product served with the choice of veg fillings.",
+    "fill": "veg",
+    "image": "banner-crunchy_taco_veg_.jpg",
+    "price": "79",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396a22b3e3edafbaca0d84",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "CRUNCHY TACO - CHICKEN",
+    "description": "Its Hard.It's Crunchy. It's Delicious! Our signature product served with the choice of veg fillings.",
+    "fill": "non-veg",
+    "image": "banner-crunchy_taco_nv_.jpg",
+    "price": "89",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396a5f1c1923eb78929d4e",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "CHEESY DOUBLE DECKER TACO",
+    "description": "It is the perfect delight for cheese lovers. A double layer Taco with cheese filled between a soft and crunchy shell. Served with fresh veggies and veg fillings. ",
+    "fill": "veg",
+    "image": "banner-cddt_veg_.jpg",
+    "price": "129",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396a9d5a4ce2237dbafd27",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "CRUNCHY TACO - CHICKEN",
+    "description": "Its Hard.It's Crunchy. It's Delicious! Our signature product served with the choice of veg fillings.",
+    "fill": "non-veg",
+    "image": "banner-crunchy_taco_nv_.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396ac040ef0cad26dcc0fe",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "MILD NAKED CHICKEN TACO",
+    "description": "A Taco made entirely out of chicken! It is a juicy and crispy chicken taco filled with cool ranch sauce, fresh lettuce, fiesta salsa and topped with shredded cheddar & mozzarella cheese. A must try!",
+    "fill": "non-veg",
+    "image": "banner-nct.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396b08abab2420b35d71d8",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "WILD NAKED CHICKEN TACO",
+    "description": "Crispy chicken shell that’s coated with hot spices, filled with Mexican slaw, lettuce, tomato salsa and shredded cheese",
+    "fill": "non-veg",
+    "image": "a_la_carte_wildnct_1370650.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396b5c096b3dadbbc9fd9c",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "TWO TACO MEAL",
+    "description": "Two veg Tacos with choice of filling and sauce, one side of choice and unlimited refills on soft drinks (dine-in) / one beverage pet bottle of choice (delivery). Relish the double delish.",
+    "fill": "veg",
+    "image": "banner-2_taco_meal_veg_.jpg",
+    "price": "159",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396bd0612a119203094957",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "TWO TACO MEAL",
+    "description": "Two veg Tacos with choice of filling and sauce, one side of choice and unlimited refills on soft drinks (dine-in) / one beverage pet bottle of choice (delivery). Relish the double delish.",
+    "fill": "non-veg",
+    "image": "banner-2_taco_meal_nonveg_1_.jpg",
+    "price": "179",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396bef0fc417a698c28937",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "CHEESY DOUBLE DECKER TACO MEAL",
+    "description": "One veg cheesy double decker taco, served with either mexican fries or nachos & salsa and a choice of beverage",
+    "fill": "veg",
+    "image": "banner-cddt_meal_veg__2.jpg",
+    "price": "179",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396c32dc5ad6c3037166c3",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "CHEESY DOUBLE DECKER TACO MEAL",
+    "description": "One veg cheesy double decker taco, served with either mexican fries or nachos & salsa and a choice of beverage",
+    "fill": "non-veg",
+    "image": "banner-cddt_meal_chicken_.jpg",
+    "price": "199",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396c5133fa52ad711a7b00",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "MILD NAKED CHICKEN TACO MEAL FOR 1",
+    "description": "One Naked Chicken Taco, One side of choice and unlimited free soft drinks refills",
+    "fill": "non-veg",
+    "image": "banner-nct_meal_for_1_1.jpg",
+    "price": "199",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396ca4d10c40e7fd9cc463",
+    "category": "5f36a8a3f05ee96a4a31f830",
+    "category_name": "tacos",
+    "name": "MILD NAKED CHICKEN TACO MEAL FOR 2",
+    "description": "Two Naked Chicken Taco, One side of choice and unlimited free soft drinks refills",
+    "fill": "non-veg",
+    "image": "banner-nct_meal_for_2.jpg",
+    "price": "229",
+    "quantity": "25"
+  }
+]

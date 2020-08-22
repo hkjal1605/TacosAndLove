@@ -1,0 +1,112 @@
+[
+  {
+    "_id": "5f39665da2c6b05f929b711a",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "THE BURRITO",
+    "description": "The Burrito is a soft tortilla roll where all the goodness is wrapped up on the inside. No mess. No stress.",
+    "fill": "veg",
+    "image": "banner-the_burritos_veg_.jpg",
+    "price": "189",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3966bee845750e26732b62",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "THE BURRITO",
+    "description": "The Burrito is a soft tortilla roll where all the goodness wrapped up on the inside. No mess. No stress.",
+    "fill": "non-veg",
+    "image": "banner-the_burritos_non_veg_.jpg",
+    "price": "209",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39670dd42caddd84b5e249",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "TIKKA MASALA BURRITO",
+    "description": "Tikka Masala Burrito is a soft tortilla roll with delicious veg fillings topped with special Indian tikka masala sauce. So special that you may not find it anywhere else in the world.",
+    "fill": "veg",
+    "image": "banner-tmb_veg_.jpg",
+    "price": "139",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3967576a32e1818862a9a9",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "TIKKA MASALA BURRITO",
+    "description": "Tikka Masala Burrito is a soft tortilla roll with delicious veg fillings topped with special Indian tikka masala sauce. So special that you may not find it anywhere else in the world.",
+    "fill": "non-veg",
+    "image": "banner-tmb_nonveg_.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39677d371f171ddfc9707a",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "7 LAYER BURRITO",
+    "description": "Another signature product from Taco Bell, a 7 Layer Burrito is a complete meal in itself. It is a grilled soft tortilla filled with 7 different fillings. Every bite is flavourful - saucy, tangy & spicy.",
+    "fill": "veg",
+    "image": "banner-7layer_burritos.jpg",
+    "price": "239",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3967c7fa1898ceedcc6496",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "7 LAYER BURRITO",
+    "description": "Another signature product from Taco Bell, a 7 Layer Burrito is a complete meal in itself. It is a grilled soft tortilla filled with 7 different fillings. Every bite is flavourful - saucy, tangy & spicy.",
+    "fill": "non-veg",
+    "image": "banner-7layer_burritos_nonveg_.jpg",
+    "price": "259",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3967ef1f0a1d9ddb0fb8c4",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "7 LAYER BURRITO MEAL",
+    "description": "One veg 7 Layer Burrito with a choice of side and beverage",
+    "fill": "veg",
+    "image": "banner-7layer_burritos_meal_veg_.jpg",
+    "price": "369",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f396841f160441b36bbc444",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "7 LAYER BURRITO MEAL",
+    "description": "One veg 7 Layer Burrito with a choice of side and beverage",
+    "fill": "non-veg",
+    "image": "banner-7layer_burritos_meal_nonveg_.jpg",
+    "price": "389",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39686713d2898b6c4134c2",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "TIKKA MASALA BURRITO MEAL",
+    "description": "One Tikka Masala Burrito Veg - Mexican Paneer, one Mexican Fries/Nachos & Salsa and unlimited refills on soft drinks (dine-in) / one beverage pet bottle of choice (delivery)",
+    "fill": "veg",
+    "image": "banner-tmb_meal_veg_.jpg",
+    "price": "259",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f3968b4d8387598e460db15",
+    "category": "5f36a9b559d6de92d1347e42",
+    "category_name": "burritos",
+    "name": "TIKKA MASALA BURRITO MEAL",
+    "description": "One Tikka Masala Burrito Veg - Mexican Paneer, one Mexican Fries/Nachos & Salsa and unlimited refills on soft drinks (dine-in) / one beverage pet bottle of choice (delivery)",
+    "fill": "non-veg",
+    "image": "tikka_masala_burrito_meal_non_veg.jpg",
+    "price": "279",
+    "quantity": "25"
+  }
+]

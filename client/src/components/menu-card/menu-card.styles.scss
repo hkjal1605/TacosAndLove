@@ -1,0 +1,53 @@
+.menu-card {
+  background-color: #fff;
+  width: 100%;
+  height: 40rem;
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  outline: 2px solid #ffe49b;
+  outline-offset: -1rem;
+
+  transition: all 0.6s;
+
+  &:hover {
+    transform: translateY(-1rem) scale(1.01);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+  }
+
+  &__photo {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__icon-container {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 2000px;
+    background-color: #fff;
+    position: absolute;
+    top: 27rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    fill: #352700;
+  }
+
+  &__title {
+    padding-top: 5rem;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+}

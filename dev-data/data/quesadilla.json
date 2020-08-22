@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "5f3964cba66f0a73d518a58a",
+    "category": "5f36aafa5dc9543bd28cdef3",
+    "category_name": "quesadilla",
+    "name": "FAJITA VEGGIE QUESADILLA",
+    "description": "A soft grilled tortilla folded with loads of melted cheese, fresh veggies, served with a choice of sauce.",
+    "fill": "veg",
+    "image": "banner-fajita_veggie_quesadilla.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39651ffc442608ecb4bc4f",
+    "category": "5f36aafa5dc9543bd28cdef3",
+    "category_name": "quesadilla",
+    "name": "CHEESE QUESADILLA",
+    "description": "The Cheese Quesadilla may appear to be basic but it is all things great. It is a soft grilled Tortilla folded with loads of cheese, served with a choice of sauce.",
+    "fill": "veg",
+    "image": "banner-cheese_quesadilla.jpg",
+    "price": "149",
+    "quantity": "25"
+  },
+  {
+    "_id": "5f39655049ad3f50298ff5c7",
+    "category": "5f36aafa5dc9543bd28cdef3",
+    "category_name": "quesadilla",
+    "name": "CHICKEN QUESADILLA",
+    "description": "The Chicken Quesadilla is a purist’s meal; and we say “purist” in the most complimenting way possible. ",
+    "fill": "non-veg",
+    "image": "banner-chicken_quesadilla.jpg",
+    "price": "169",
+    "quantity": "25"
+  }
+]
