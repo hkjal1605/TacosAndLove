@@ -33,7 +33,12 @@ app.use(
     directives: {
       defaultSrc: ["'self'", "*"],
       scriptSrc: ["'self'", "https://js.stripe.com/v3/", "'unsafe-inline'"],
-      styleSrc: ["'self'", "https://fonts.googleapis.com", "*"],
+      styleSrc: [
+        "'self'",
+        "https://fonts.googleapis.com",
+        "*",
+        "'unsafe-inline'",
+      ],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
     },
   })
