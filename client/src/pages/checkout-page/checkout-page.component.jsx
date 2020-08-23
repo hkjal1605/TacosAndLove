@@ -12,15 +12,16 @@ import {
   removeFromCartStart,
 } from "../../redux/cart/cart.actions";
 
-import { getCheckoutSessionStartAsync } from "../../redux/booking/booking.actions";
+import { getCheckoutSessionStart } from "../../redux/booking/booking.actions";
 
 class CheckoutPage extends React.Component {
-  getCheckoutSession(cartId) {
-    this.props.getCheckoutSessionStartAsync(cartId);
-  }
-
   render() {
-    const { cart, addToCartStart, removeFromCartStart } = this.props;
+    const {
+      cart,
+      addToCartStart,
+      removeFromCartStart,
+      getCheckoutSessionStart,
+    } = this.props;
     return (
       <div className="checkout-page">
         <h2 className="checkout-page__heading">YOUR BAG</h2>
@@ -64,7 +65,7 @@ class CheckoutPage extends React.Component {
 
           <button
             className="checkout-page__total-details--button"
-            onClick={this.getCheckoutSession(cart._id)}
+            onClick={() => getCheckoutSessionStart(cart._id)}
           >
             Pay Now
           </button>
@@ -83,8 +84,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addToCartStart(itemName, itemId)),
   removeFromCartStart: (itemName, itemId) =>
     dispatch(removeFromCartStart(itemName, itemId)),
-  getCheckoutSessionStartAsync: (cartId) =>
-    dispatch(getCheckoutSessionStartAsync(cartId)),
+  getCheckoutSessionStart: (cartId) =>
+    dispatch(getCheckoutSessionStart(cartId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);

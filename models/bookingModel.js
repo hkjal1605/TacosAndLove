@@ -5,6 +5,7 @@ const bookingSchema = new mongoose.Schema({
     {
       _id: mongoose.Schema.ObjectId,
       name: String,
+      image: String,
       price: Number,
       quantity: Number,
     },

@@ -23,6 +23,8 @@ const sidesRouter = require("./routes/sidesRouter");
 const specialitiesRouter = require("./routes/specialitiesRouter");
 const bookingRouter = require("./routes/bookingRouter");
 
+const bookingController = require("./controllers/bookingController");
+
 const app = express();
 
 app.use(cors());
@@ -62,6 +64,12 @@ app.use(express.json());
 app.use(mongoSanitize());
 app.use(xss());
 app.use(compression());
+
+app.post(
+  "/webhook-checkout",
+  express.raw({ type: "application/json" }),
+  bookingController.webhookCheckout
+);
 
 app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/service-worker.js"));
