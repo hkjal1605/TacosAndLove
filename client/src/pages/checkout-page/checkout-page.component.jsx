@@ -12,65 +12,67 @@ import {
   removeFromCartStart,
 } from "../../redux/cart/cart.actions";
 
-import { getCheckoutSessionStart } from "../../redux/booking/booking.actions";
+import { getCheckoutSessionStartAsync } from "../../redux/booking/booking.actions";
 
-const CheckoutPage = ({
-  cart,
-  addToCartStart,
-  removeFromCartStart,
-  getCheckoutSessionStart,
-}) => {
-  return (
-    <div className="checkout-page">
-      <h2 className="checkout-page__heading">YOUR BAG</h2>
-      <span className="checkout-page__subtext">{`Summary of ${cart.items.length} items.`}</span>
-      <div className="checkout-page__item-list">
-        {cart.items.map((item) => (
-          <div key={item._id} className="checkout-page__item-details">
-            <img
-              src={`/img/${item.image}`}
-              alt={`${item.name}`}
-              className="checkout-page__item-details--image"
-            />
-            <h5 className="checkout-page__item-details--name">{item.name}</h5>
-            <div className="checkout-page__item-details--quantity-container">
-              <h5
-                className="checkout-page__item-details--add"
-                onClick={() =>
-                  removeFromCartStart(item.category_name, item._id)
-                }
-              >
-                &#8918;
-              </h5>
-              <h5 className="checkout-page__item-details--quantity">{`Quantity: ${item.quantity}`}</h5>
-              <h5
-                className="checkout-page__item-details--add"
-                onClick={() => addToCartStart(item.category_name, item._id)}
-              >
-                &#8919;
-              </h5>
+class CheckoutPage extends React.Component {
+  getCheckoutSession(cartId) {
+    this.props.getCheckoutSessionStartAsync(cartId);
+  }
+
+  render() {
+    const { cart, addToCartStart, removeFromCartStart } = this.props;
+    return (
+      <div className="checkout-page">
+        <h2 className="checkout-page__heading">YOUR BAG</h2>
+        <span className="checkout-page__subtext">{`Summary of ${cart.items.length} items.`}</span>
+        <div className="checkout-page__item-list">
+          {cart.items.map((item) => (
+            <div key={item._id} className="checkout-page__item-details">
+              <img
+                src={`/img/${item.image}`}
+                alt={`${item.name}`}
+                className="checkout-page__item-details--image"
+              />
+              <h5 className="checkout-page__item-details--name">{item.name}</h5>
+              <div className="checkout-page__item-details--quantity-container">
+                <h5
+                  className="checkout-page__item-details--add"
+                  onClick={() =>
+                    removeFromCartStart(item.category_name, item._id)
+                  }
+                >
+                  &#8918;
+                </h5>
+                <h5 className="checkout-page__item-details--quantity">{`Quantity: ${item.quantity}`}</h5>
+                <h5
+                  className="checkout-page__item-details--add"
+                  onClick={() => addToCartStart(item.category_name, item._id)}
+                >
+                  &#8919;
+                </h5>
+              </div>
+              <span className="checkout-page__item-details--price">
+                &#8377;{` ${item.price * item.quantity}`}
+              </span>
             </div>
-            <span className="checkout-page__item-details--price">
-              &#8377;{` ${item.price * item.quantity}`}
-            </span>
-          </div>
-        ))}
-      </div>
-      <div className="checkout-page__total-details">
-        <h4 className="checkout-page__total-details--heading">
-          TOTAL: &#8377;{` ${cart.total}`}
-        </h4>
+          ))}
+        </div>
+        <div className="checkout-page__total-details">
+          <h4 className="checkout-page__total-details--heading">
+            TOTAL: &#8377;{` ${cart.total}`}
+          </h4>
 
-        <button
-          className="checkout-page__total-details--button"
-          onClick={() => getCheckoutSessionStart(cart._id)}
-        >
-          Pay Now
-        </button>
+          <button
+            className="checkout-page__total-details--button"
+            onClick={this.getCheckoutSession(cart._id)}
+          >
+            Pay Now
+          </button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = createStructuredSelector({
   cart: selectUserCart,
@@ -81,8 +83,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addToCartStart(itemName, itemId)),
   removeFromCartStart: (itemName, itemId) =>
     dispatch(removeFromCartStart(itemName, itemId)),
-  getCheckoutSessionStart: (cartId) =>
-    dispatch(getCheckoutSessionStart(cartId)),
+  getCheckoutSessionStartAsync: (cartId) =>
+    dispatch(getCheckoutSessionStartAsync(cartId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);
