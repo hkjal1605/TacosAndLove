@@ -10,6 +10,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
   cart.items.map((item) => {
     tempObject.name = item.name;
+    temmObject.image = `https://tacosandlove.herokuapp.com/img/${item.image}`;
     tempObject.amount = item.price * 100;
     tempObject.currency = "inr";
     tempObject.quantity = item.quantity;
