@@ -28,7 +28,16 @@ const app = express();
 app.use(cors());
 app.options("*", cors());
 
-// app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'", "*"],
+      scriptSrc: ["'self'", "https://js.stripe.com/v3/", "'unsafe-inline'"],
+      styleSrc: ["'self'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+    },
+  })
+);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
