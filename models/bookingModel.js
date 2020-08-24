@@ -3,10 +3,9 @@ const mongoose = require("mongoose");
 const bookingSchema = new mongoose.Schema({
   items: [
     {
-      _id: mongoose.Schema.ObjectId,
       name: String,
-      image: String,
-      price: Number,
+      image: [String],
+      amount: Number,
       quantity: Number,
     },
   ],
@@ -15,7 +14,7 @@ const bookingSchema = new mongoose.Schema({
     ref: "Customer",
     required: [true, "A booking must have belong to a user"],
   },
-  price: {
+  amount: {
     type: Number,
     required: [true, "A booking must have a price"],
   },

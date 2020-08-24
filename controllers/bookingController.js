@@ -1,6 +1,7 @@
 const catchAsync = require("../utils/catchAsync");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Cart = require("../models/cartModel");
+const bookingModel = require("../models/bookingModel");
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const cart = await Cart.findById(req.params.cartId);
@@ -10,7 +11,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
   cart.items.map((item) => {
     tempObject.name = item.name;
-    temmObject.image = `https://tacosandlove.herokuapp.com/img/${item.image}`;
+    tempObject.images = [
+      `https://tacosandlove.herokuapp.com/img/${item.image}`,
+    ];
     tempObject.amount = item.price * 100;
     tempObject.currency = "inr";
     tempObject.quantity = item.quantity;
@@ -40,16 +43,33 @@ const createBookingCheckout = async (session) => {
     items: [],
   });
 
-  console.log(session);
-  // const tour = session.client_reference_id;
-  // const user = (await User.findOne({ email: session.customer_email })).id;
-  // const price = session.display_items[0].amount / 100;
+  let tempObject = {};
 
-  // await Booking.create({ tour, user, price });
+  const itemArray = [];
+
+  session.display_items.map((item) => {
+    tempObject.name = item.custom.name;
+    tempObject.image = item.custom.images[0];
+    tempObject.amount = item.amount / 100;
+    tempObject.quantity = item.quantity;
+
+    itemArray.push(tempObject);
+    tempObject = {};
+  });
+
+  await bookingModel.create({
+    items: itemArray,
+    customer: req.user.id,
+    amount: session.amount_total / 100,
+  });
 };
 
 exports.webhookCheckout = (req, res, next) => {
   const signature = req.headers["stripe-signature"];
+
+  console.log(signature);
+  console.log(req.body);
+  console.log(process.env.STRIPE_WEBHOOK_SECRET);
 
   let event;
   try {

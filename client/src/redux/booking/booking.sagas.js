@@ -21,7 +21,7 @@ export function* getCheckoutSessionAsync({ payload }) {
       sessionId: session.data.session.id,
     });
   } catch (err) {
-    console.log(err);
+    console.log(err.response.data);
   }
 }
 
