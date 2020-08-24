@@ -66,7 +66,7 @@ app.use(xss());
 app.use(compression());
 
 app.post(
-  "/api/v1/webhook-checkout",
+  "/webhook-checkout",
   express.raw({ type: "application/json" }),
   bookingController.webhookCheckout
 );
