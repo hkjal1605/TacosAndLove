@@ -59,17 +59,17 @@ app.use("/api", limiter);
 
 app.use(cookieParser());
 
-app.use(express.json());
-
-app.use(mongoSanitize());
-app.use(xss());
-app.use(compression());
-
 app.post(
   "/webhook-checkout",
   express.raw({ type: "application/json" }),
   bookingController.webhookCheckout
 );
+
+app.use(express.json());
+
+app.use(mongoSanitize());
+app.use(xss());
+app.use(compression());
 
 app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/service-worker.js"));
