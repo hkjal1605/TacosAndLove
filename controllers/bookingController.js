@@ -38,10 +38,10 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 });
 
 const createBookingCheckout = async (session) => {
-  await Cart.findByIdAndUpdate(req.params.cartId, {
-    total: 0,
-    items: [],
-  });
+  // await Cart.findByIdAndUpdate(req.params.cartId, {
+  //   total: 0,
+  //   items: [],
+  // });
 
   let tempObject = {};
 
@@ -75,9 +75,7 @@ exports.webhookCheckout = (req, res, next) => {
       process.env.STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
-    return res.status(400).json({
-      error: err,
-    });
+    return res.status(400).send(`Webkook Error: ${err.message}`);
   }
 
   if (event.type === "checkout.session.completed")
