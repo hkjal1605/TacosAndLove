@@ -1,7 +1,7 @@
 const catchAsync = require("../utils/catchAsync");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Cart = require("../models/cartModel");
-const bookingModel = require("../models/bookingModel");
+const Booking = require("../models/bookingModel");
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const cart = await Cart.findById(req.params.cartId);
@@ -38,10 +38,10 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 });
 
 const createBookingCheckout = async (session) => {
-  // await Cart.findByIdAndUpdate(req.params.cartId, {
-  //   total: 0,
-  //   items: [],
-  // });
+  await Cart.findByIdAndUpdate(req.params.cartId, {
+    total: 0,
+    items: [],
+  });
 
   let tempObject = {};
 
@@ -57,7 +57,7 @@ const createBookingCheckout = async (session) => {
     tempObject = {};
   });
 
-  await bookingModel.create({
+  await Booking.create({
     items: itemArray,
     customer: req.user.id,
     amount: session.amount_total / 100,
