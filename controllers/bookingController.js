@@ -37,12 +37,19 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   });
 });
 
-const createBookingCheckout = async (req, session) => {
+const createBookingCheckout = async (session) => {
   console.log("reached here");
-  await Cart.findByIdAndUpdate(req.params.cartId, {
-    total: 0,
-    items: [],
-  });
+  const cart = await Cart.findByIdAndUpdate(
+    session.client_reference_id,
+    {
+      total: 0,
+      items: [],
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 
   let tempObject = {};
 
@@ -60,7 +67,7 @@ const createBookingCheckout = async (req, session) => {
 
   await Booking.create({
     items: itemArray,
-    customer: req.user.id,
+    customer: cart.customer_id,
     amount: session.amount_total / 100,
   });
 };
@@ -82,7 +89,7 @@ exports.webhookCheckout = (req, res, next) => {
   console.log(event.type);
 
   if (event.type === "checkout.session.completed")
-    createBookingCheckout(req, event.data.object);
+    createBookingCheckout(event.data.object);
 
   res.status(200).json({ received: true });
 };
