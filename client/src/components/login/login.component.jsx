@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./login.styles.scss";
@@ -59,6 +59,9 @@ class Login extends React.Component {
             <CustomButton type="submit" content="LOG IN" />
           </div>
         </form>
+        <Link to="/user/forgotPassword">
+          <h5 className="login__forgot-pass">Forgot Password?</h5>
+        </Link>
       </div>
     );
   }

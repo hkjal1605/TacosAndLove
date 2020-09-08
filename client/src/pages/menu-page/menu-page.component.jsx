@@ -1,43 +1,30 @@
 import React from "react";
 
-import { connect } from "react-redux";
-
-import { fetchItemStartAsync } from "../../redux/menu-items/items.actions";
-import { selectIsItemListFetching } from "../../redux/menu-items/items.selector";
-
 import MenuPreview from "../../components/menu-preview/menu-preview.component";
-import WithSpinner from "../../components/with-spinner/with-spinner.component";
 
 import "./menu-page.styles.scss";
-import { createStructuredSelector } from "reselect";
-
-const MenuPreviewWithSpinner = WithSpinner(MenuPreview);
+import { Route } from "react-router-dom";
 
 class MenuPage extends React.Component {
-  componentDidMount() {
-    const { fetchItemStartAsync, match } = this.props;
-
-    fetchItemStartAsync(match.params.itemName);
-  }
   render() {
-    const { isItemLoading, match } = this.props;
+    const { match } = this.props;
     return (
       <div className="menu-page">
-        <MenuPreviewWithSpinner
-          isLoading={isItemLoading}
-          menuName={match.params.itemName}
-        />
+        <Route path={`${match.path}/tacos`} component={MenuPreview}></Route>
+        <Route path={`${match.path}/burritos`} component={MenuPreview}></Route>
+        <Route
+          path={`${match.path}/quesadilla`}
+          component={MenuPreview}
+        ></Route>
+        <Route path={`${match.path}/sides`} component={MenuPreview}></Route>
+        <Route path={`${match.path}/deserts`} component={MenuPreview}></Route>
+        <Route
+          path={`${match.path}/specialities`}
+          component={MenuPreview}
+        ></Route>
       </div>
     );
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  isItemLoading: selectIsItemListFetching,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  fetchItemStartAsync: (itemName) => dispatch(fetchItemStartAsync(itemName)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MenuPage);
+export default MenuPage;

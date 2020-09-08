@@ -1,0 +1,51 @@
+.user-dropdown {
+  height: 30rem;
+  width: 25rem;
+  background-image: linear-gradient(to right bottom, #ffdb79, #ffedbd);
+  border-radius: 5px;
+  position: absolute;
+  top: 11.4rem;
+  right: 2.3rem;
+  z-index: 1000;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 1.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #ffc013;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ff0099;
+    background: -webkit-linear-gradient(to bottom, #130e00, #9b7200);
+    background: linear-gradient(to bottom, #130e00, #9b7200);
+    border-radius: 2rem;
+    border: 3px solid #ffc013;
+  }
+
+  &__option-container {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--icon {
+      height: 3.4rem;
+      width: 3.4rem;
+      fill: #352700;
+      margin-right: 0.6rem;
+    }
+
+    &--button {
+      background-color: transparent;
+
+      &:after {
+        background-color: transparent;
+      }
+    }
+  }
+}

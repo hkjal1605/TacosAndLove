@@ -37,3 +37,35 @@ export const logoutCurentUserFailure = (err) => ({
   type: UserActionTypes.LOGOUT_CURRENT_USER_FAILURE,
   payload: err,
 });
+
+export const toggleUserOptionsHidden = () => ({
+  type: UserActionTypes.TOGGLE_USER_OPTIONS_HIDDEN,
+});
+
+export const forgotPasswordStart = (email) => ({
+  type: UserActionTypes.FORGOT_PASSWORD,
+  payload: email,
+});
+
+export const forgotPasswordSuccess = () => ({
+  type: UserActionTypes.FORGOT_PASSWORD_SUCCESS,
+});
+
+export const forgotPasswordFailure = (err) => ({
+  type: UserActionTypes.FORGOT_PASSWORD_FAILURE,
+  payload: err,
+});
+
+export const resetPasswordStart = (token, password, confirmPassword) => ({
+  type: UserActionTypes.RESET_PASSWORD,
+  payload: { token, password, confirmPassword },
+});
+
+export const resetPasswordFailure = (err) => ({
+  type: UserActionTypes.RESET_PASSWORD_FAILURE,
+  payload: err,
+});
+
+export const cancelResetPasswordProcess = () => ({
+  type: UserActionTypes.CANCEL_RESET_PASSWORD_PROCESS,
+});

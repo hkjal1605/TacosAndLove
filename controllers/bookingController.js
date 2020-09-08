@@ -93,3 +93,14 @@ exports.webhookCheckout = (req, res, next) => {
 
   res.status(200).json({ received: true });
 };
+
+exports.getUserBookings = catchAsync(async (req, res, next) => {
+  const bookings = await Booking.find({ customer: req.user.id });
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      bookings,
+    },
+  });
+});

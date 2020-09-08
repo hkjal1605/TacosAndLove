@@ -1,0 +1,105 @@
+.booking-card {
+  width: 100%;
+  padding: 2rem;
+  height: 45rem;
+  width: 38rem;
+  border-radius: 0.6rem;
+  background-image: linear-gradient(to right bottom, #ffdb79, #ffedbd);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__items-list {
+    height: 33rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 1.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ffc013;
+      border-radius: 2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ff0099;
+      background: -webkit-linear-gradient(to bottom, #130e00, #9b7200);
+      background: linear-gradient(to bottom, #130e00, #9b7200);
+      border-radius: 2rem;
+      border: 3px solid #ffc013;
+    }
+
+    &--heading {
+      text-align: left;
+      font-size: 2rem;
+      font-weight: 300;
+      font-family: "Lato", sans-serif;
+      color: #352700;
+      margin-bottom: 1.5rem;
+    }
+
+    &--item {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+    }
+
+    &--image {
+      border-radius: 3px;
+      height: 6rem;
+      width: 6rem;
+      object-fit: cover;
+    }
+
+    &--name {
+      width: 24rem;
+      text-align: left;
+      padding: 0 2rem;
+      color: #555;
+      font-size: 1.7rem;
+      font-weight: 400;
+    }
+
+    &--quantity {
+      width: 4rem;
+      color: #555;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+
+  &__bottom {
+    width: 95%;
+    background-color: #341f97;
+    border-radius: 0.5rem 0.5rem 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 1.5rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__amount {
+    font-family: "Lato", sans-serif;
+    font-size: 2.4rem;
+    color: #48dbfb;
+  }
+
+  &__time {
+    padding-top: 1rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
+    color: #eee;
+  }
+}

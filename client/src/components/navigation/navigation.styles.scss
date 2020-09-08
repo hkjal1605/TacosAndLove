@@ -90,7 +90,6 @@
   }
 
   &__content {
-    display: none;
     position: absolute;
     background-color: #333;
     z-index: 1;
@@ -99,10 +98,6 @@
   &__option {
     padding: 2rem 3.5rem;
   }
-}
-
-.menu-dropdown:hover .menu-dropdown__content {
-  display: block;
 }
 
 .signup {

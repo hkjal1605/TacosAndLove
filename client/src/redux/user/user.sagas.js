@@ -8,6 +8,9 @@ import {
   signupUserFailure,
   logoutCurrentUserSuccess,
   logoutCurentUserFailure,
+  forgotPasswordSuccess,
+  forgotPasswordFailure,
+  resetPasswordFailure,
 } from "./user.actions";
 
 import { fetchUserCartSuccess } from "../cart/cart.actions";
@@ -52,11 +55,40 @@ export function* signupUserAsync({ payload }) {
 
 export function* logoutUserAsync() {
   try {
-    const noUser = yield axios.get("/api/v1/customer/logout");
+    yield axios.get("/api/v1/customer/logout");
 
     yield put(logoutCurrentUserSuccess());
   } catch (err) {
     yield put(logoutCurentUserFailure(err.response.data.message));
+  }
+}
+
+export function* forgotPasswordAsync({ payload }) {
+  try {
+    yield axios.post("/api/v1/customer/forgotPassword", {
+      email: payload,
+    });
+
+    yield put(forgotPasswordSuccess());
+  } catch (err) {
+    yield put(forgotPasswordFailure(err.response.data.message));
+  }
+}
+
+export function* resetPasswordAsync({ payload }) {
+  console.log(payload);
+  try {
+    const user = yield axios.patch(
+      `/api/v1/customer/resetPassword/${payload.token}`,
+      {
+        password: payload.password,
+        confirmPassword: payload.confirmPassword,
+      }
+    );
+
+    yield put(setCurrentUser(user.data.data.user));
+  } catch (err) {
+    yield put(resetPasswordFailure(err.response.data.message));
   }
 }
 
@@ -72,10 +104,20 @@ export function* logoutUserStart() {
   yield takeLatest(UserActionTypes.LOGOUT_CURRENT_USER_START, logoutUserAsync);
 }
 
+export function* forgotPasswordStart() {
+  yield takeLatest(UserActionTypes.FORGOT_PASSWORD, forgotPasswordAsync);
+}
+
+export function* resetPasswordStart() {
+  yield takeLatest(UserActionTypes.RESET_PASSWORD, resetPasswordAsync);
+}
+
 export function* userSagas() {
   yield all([
     call(loginUserStart),
     call(signupUserStart),
     call(logoutUserStart),
+    call(forgotPasswordStart),
+    call(resetPasswordStart),
   ]);
 }

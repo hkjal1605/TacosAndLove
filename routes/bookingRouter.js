@@ -7,5 +7,6 @@ const router = express.Router();
 router.use(authController.protect);
 
 router.get("/checkout-session/:cartId", bookingController.getCheckoutSession);
+router.get("/my-bookings", bookingController.getUserBookings);
 
 module.exports = router;

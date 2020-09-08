@@ -15,6 +15,8 @@ import Navigation from "./components/navigation/navigation.component";
 import LoginPage from "./pages/login-page/login-page.component";
 import SignupPage from "./pages/signup-page/signup-page.component";
 import CheckoutPage from "./pages/checkout-page/checkout-page.component";
+import BookingsPage from "./pages/bookings-page/bookings-page.component";
+import PasswordResetPage from "./pages/password-reset/password-reset.component";
 
 class App extends React.Component {
   render() {
@@ -24,6 +26,7 @@ class App extends React.Component {
         <Navigation />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/menu" component={MenuPage} />
           <Route
             exact
             path="/login"
@@ -34,8 +37,15 @@ class App extends React.Component {
             path="/signup"
             render={() => (currentUser ? <Redirect to="/" /> : <SignupPage />)}
           />
+          <Route exact path="/my-orders" component={BookingsPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
-          <Route exact path="/:itemName" component={MenuPage} />
+          <Route
+            exact
+            path="/user/forgotPassword"
+            render={() =>
+              currentUser ? <Redirect to="/" /> : <PasswordResetPage />
+            }
+          />
         </Switch>
       </div>
     );

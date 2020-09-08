@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { selectItemList } from "../../redux/menu-items/items.selector";
+import { fetchItemStartAsync } from "../../redux/menu-items/items.actions";
 
 import "./menu-preview.styles.scss";
 
@@ -25,51 +26,65 @@ const iconsObject = {
   Specialities: <Specialities className="menu-card__icon" />,
 };
 
-const MenuPreview = ({ itemList, menuName }) => {
-  return (
-    <div className="menu-preview">
-      {itemList ? (
-        <div className="menu-preview__header">
-          <img
-            src={`/img/${itemList[0].image}`}
-            alt="Menu Item"
-            className="menu-preview__header--image"
-          />
-          <img
-            src={`/img/${itemList[1].image}`}
-            alt="Menu Item"
-            className="menu-preview__header--image"
-          />
-          <img
-            src={`/img/${itemList[2].image}`}
-            alt="Menu Item"
-            className="menu-preview__header--image"
-          />
-        </div>
-      ) : null}
+class MenuPreview extends React.Component {
+  componentDidMount() {
+    const { fetchItemStartAsync, match } = this.props;
+    console.log(match.path.split("/"));
+    fetchItemStartAsync(match.path.split("/")[2]);
+  }
 
-      <div className="menu-preview__content">
-        <div className="menu-preview__icon-container">
-          {Object.keys(iconsObject).map((key) =>
-            key.toLowerCase() === menuName ? iconsObject[key] : null
-          )}
-        </div>
-        <h2 className="menu-preview__heading">{menuName.toUpperCase()}</h2>
+  render() {
+    const { itemList, match } = this.props;
+    const menuName = match.path.split("/")[2];
+    return (
+      <div className="menu-preview">
+        {itemList ? (
+          <div className="menu-preview__header">
+            <img
+              src={`/img/${itemList[0].image}`}
+              alt="Menu Item"
+              className="menu-preview__header--image"
+            />
+            <img
+              src={`/img/${itemList[1].image}`}
+              alt="Menu Item"
+              className="menu-preview__header--image"
+            />
+            <img
+              src={`/img/${itemList[2].image}`}
+              alt="Menu Item"
+              className="menu-preview__header--image"
+            />
+          </div>
+        ) : null}
 
-        <div className="menu-preview__container">
-          {itemList
-            ? itemList.map((item) => (
-                <ItemCard key={item._id} item={item} itemName={menuName} />
-              ))
-            : null}
+        <div className="menu-preview__content">
+          <div className="menu-preview__icon-container">
+            {Object.keys(iconsObject).map((key) =>
+              key.toLowerCase() === menuName ? iconsObject[key] : null
+            )}
+          </div>
+          <h2 className="menu-preview__heading">{menuName.toUpperCase()}</h2>
+
+          <div className="menu-preview__container">
+            {itemList
+              ? itemList.map((item) => (
+                  <ItemCard key={item._id} item={item} itemName={menuName} />
+                ))
+              : null}
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = createStructuredSelector({
   itemList: selectItemList,
 });
 
-export default connect(mapStateToProps)(MenuPreview);
+const mapDispatchToProps = (dispatch) => ({
+  fetchItemStartAsync: (itemName) => dispatch(fetchItemStartAsync(itemName)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuPreview);

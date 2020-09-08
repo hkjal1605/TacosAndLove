@@ -1,6 +1,10 @@
 import { takeLatest, call, put, all } from "redux-saga/effects";
 
-import { getCheckoutSession } from "./booking.actions";
+import {
+  getCheckoutSession,
+  fetchUserBookingsSuccess,
+  fetchUserBookingsFailure,
+} from "./booking.actions";
 
 import axios from "axios";
 import bookingActionTypes from "./booking.types";
@@ -25,6 +29,16 @@ export function* getCheckoutSessionAsync({ payload }) {
   }
 }
 
+export function* getUserBookingsAsync() {
+  try {
+    const bookings = yield axios.get("/api/v1/booking/my-bookings");
+
+    yield put(fetchUserBookingsSuccess(bookings.data.data.bookings));
+  } catch (err) {
+    yield put(fetchUserBookingsFailure(err.response.data.message));
+  }
+}
+
 export function* getCheckoutSessionStart() {
   yield takeLatest(
     bookingActionTypes.GET_CHECKOUT_SESSION_START,
@@ -32,6 +46,13 @@ export function* getCheckoutSessionStart() {
   );
 }
 
+export function* getUserBookingsStart() {
+  yield takeLatest(
+    bookingActionTypes.GET_USER_BOOKINGS_START,
+    getUserBookingsAsync
+  );
+}
+
 export function* bookingSagas() {
-  yield all([call(getCheckoutSessionStart)]);
+  yield all([call(getCheckoutSessionStart), call(getUserBookingsStart)]);
 }

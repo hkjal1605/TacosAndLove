@@ -5,6 +5,7 @@ const Customer = require("../models/customerModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const Cart = require("../models/cartModel");
+const Email = require("../utils/email");
 
 const signToken = (id) => {
   return jwt.sign(
@@ -54,6 +55,8 @@ exports.signup = catchAsync(async (req, res, next) => {
     items: [],
     total: 0,
   });
+
+  await new Email(customer).sendWelcome();
   createSendToken(customer, 201, res);
 });
 
@@ -146,3 +149,62 @@ exports.restrictTo = (...roles) => {
     next();
   };
 };
+
+exports.forgotPassword = catchAsync(async (req, res, next) => {
+  const user = await Customer.findOne({ email: req.body.email });
+  if (!user) {
+    return next(
+      new AppError("User with the given email id doesnot exist!", 404)
+    );
+  }
+
+  const resetToken = user.createPasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+
+  try {
+    console.log(user.name);
+    await new Email(user, resetToken).sendPasswordReset();
+
+    res.status(200).json({
+      status: "success",
+      message: "Your password reset token has been sent to your email",
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpiresAt = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    console.log(err);
+
+    return next(
+      new AppError(
+        "There was a problem processing your request. Please try again later",
+        500
+      )
+    );
+  }
+});
+
+exports.resetPassword = catchAsync(async (req, res, next) => {
+  const hashedToken = crypto
+    .createHash("sha256")
+    .update(req.params.token)
+    .digest("hex");
+
+  const user = await Customer.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpiresAt: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    return next(new AppError("The token is either invalid or expired!", 400));
+  }
+
+  user.password = req.body.password;
+  user.confirmPassword = req.body.confirmPassword;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpiresAt = undefined;
+  await user.save();
+
+  createSendToken(user, 200, res);
+});

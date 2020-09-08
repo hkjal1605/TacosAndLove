@@ -8,7 +8,7 @@ import { selectMenuList } from "../../redux/menu/menu.selector";
 
 import "./menu-display.styles.scss";
 
-import { ReactComponent as Menu } from "../../icons/order.svg";
+import { ReactComponent as Menu } from "../../icons/menu.svg";
 
 import MenuCard from "../../components/menu-card/menu-card.component";
 
@@ -24,7 +24,7 @@ const MenuDisplay = ({ menuList }) => {
           ? menuList.map((menu) => (
               <Link
                 key={menu._id}
-                to={`/${menu.name.toLowerCase()}`}
+                to={`/menu/${menu.name.toLowerCase()}`}
                 className="link"
               >
                 <MenuCard menu={menu} />

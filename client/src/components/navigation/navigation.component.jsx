@@ -5,11 +5,16 @@ import { connect } from "react-redux";
 
 import { logoutCurrentUserStart } from "../../redux/user/user.actions";
 import { toggleCartHidden } from "../../redux/cart/cart.actions";
-import { selectCurrentUser } from "../../redux/user/user.selector";
+import { toggleUserOptionsHidden } from "../../redux/user/user.actions";
+import {
+  selectCurrentUser,
+  selectIsUserDropdownHidden,
+} from "../../redux/user/user.selector";
 import {
   selectUserCart,
   selectIsCartHidden,
 } from "../../redux/cart/cart.selector";
+
 import { createStructuredSelector } from "reselect";
 
 import { fetchUserCartStart } from "../../redux/cart/cart.actions";
@@ -20,7 +25,16 @@ import "./navigation.styles.scss";
 
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
+import UserDropdown from "../../components/user-dropdown/user-dropdown.component";
+
 class Navigation extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      dropdownHidden: true,
+    };
+  }
   componentDidMount() {
     const { currentUser, fetchUserCartStart } = this.props;
 
@@ -33,12 +47,23 @@ class Navigation extends React.Component {
     this.props.toggleCartHidden();
   };
 
+  userHidden = () => {
+    this.props.toggleUserOptionsHidden();
+  };
+
+  toggleMenuDropdown = () => {
+    const { dropdownHidden } = this.state;
+    this.setState({ dropdownHidden: !dropdownHidden });
+    console.log(this.state);
+  };
+
   render() {
     const {
       currentUser,
       userCart,
       logoutCurrentUserStart,
       isCartHidden,
+      isUserHidden,
     } = this.props;
     let totalQuantity = 0;
     if (userCart) {
@@ -50,41 +75,65 @@ class Navigation extends React.Component {
     return (
       <div className="navigation">
         <div className="menu-dropdown">
-          <Link to="/" className="link">
-            <h5 className="navigation__option menu-dropdown__btn">Menu</h5>
-          </Link>
-          <div className="menu-dropdown__content">
-            <Link to="/tacos" className="link">
-              <h5 className="navigation__option menu-dropdown__option">
-                Tacos
-              </h5>
-            </Link>
-            <Link to="/burritos" className="link">
-              <h5 className="navigation__option menu-dropdown__option">
-                Burritos
-              </h5>
-            </Link>
-            <Link to="/quesadilla" className="link">
-              <h5 className="navigation__option menu-dropdown__option">
-                Quesadilla
-              </h5>
-            </Link>
-            <Link to="/sides" className="link">
-              <h5 className="navigation__option menu-dropdown__option">
-                Sides
-              </h5>
-            </Link>
-            <Link to="/specialities" className="link">
-              <h5 className="navigation__option menu-dropdown__option">
-                Specialities
-              </h5>
-            </Link>
-            <Link to="/deserts" className="link">
-              <h5 className="navigation__option menu-dropdown__option">
-                Deserts
-              </h5>
-            </Link>
-          </div>
+          <h5
+            className="navigation__option menu-dropdown__btn"
+            onClick={this.toggleMenuDropdown}
+          >
+            Menu
+          </h5>
+
+          {this.state.dropdownHidden ? null : (
+            <div className="menu-dropdown__content">
+              <Link to="/menu/tacos" className="link">
+                <h5
+                  className="navigation__option menu-dropdown__option"
+                  onClick={this.toggleMenuDropdown}
+                >
+                  Tacos
+                </h5>
+              </Link>
+              <Link to="/menu/burritos" className="link">
+                <h5
+                  className="navigation__option menu-dropdown__option"
+                  onClick={this.toggleMenuDropdown}
+                >
+                  Burritos
+                </h5>
+              </Link>
+              <Link to="/menu/quesadilla" className="link">
+                <h5
+                  className="navigation__option menu-dropdown__option"
+                  onClick={this.toggleMenuDropdown}
+                >
+                  Quesadilla
+                </h5>
+              </Link>
+              <Link to="/menu/sides" className="link">
+                <h5
+                  className="navigation__option menu-dropdown__option"
+                  onClick={this.toggleMenuDropdown}
+                >
+                  Sides
+                </h5>
+              </Link>
+              <Link to="/menu/specialities" className="link">
+                <h5
+                  className="navigation__option menu-dropdown__option"
+                  onClick={this.toggleMenuDropdown}
+                >
+                  Specialities
+                </h5>
+              </Link>
+              <Link to="/menu/deserts" className="link">
+                <h5
+                  className="navigation__option menu-dropdown__option"
+                  onClick={this.toggleMenuDropdown}
+                >
+                  Deserts
+                </h5>
+              </Link>
+            </div>
+          )}
         </div>
         {currentUser ? (
           <div className="navigation__user-side">
@@ -105,20 +154,22 @@ class Navigation extends React.Component {
             <h4 className="navigation__option" onClick={logoutCurrentUserStart}>
               LOG OUT
             </h4>
-            <Link className="link" to="/profile">
-              <div className="navigation__user-side--details">
-                {currentUser.photo ? (
-                  <img
-                    src={`/img/user/${currentUser.photo}`}
-                    alt="user"
-                    className="navigation__user-side--photo"
-                  />
-                ) : null}
-                <h4 className="navigation__option">
-                  {currentUser.name.split(" ")[0]}
-                </h4>
-              </div>
-            </Link>
+            <div
+              className="navigation__user-side--details"
+              onClick={this.userHidden}
+            >
+              {currentUser.photo ? (
+                <img
+                  src={`/img/user/${currentUser.photo}`}
+                  alt="user"
+                  className="navigation__user-side--photo"
+                />
+              ) : null}
+              <h4 className="navigation__option">
+                {currentUser.name.split(" ")[0]}
+              </h4>
+              {isUserHidden ? <UserDropdown /> : null}
+            </div>
           </div>
         ) : (
           <div className="navigation__user-side">
@@ -139,12 +190,14 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   userCart: selectUserCart,
   isCartHidden: selectIsCartHidden,
+  isUserHidden: selectIsUserDropdownHidden,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   logoutCurrentUserStart: () => dispatch(logoutCurrentUserStart()),
   toggleCartHidden: () => dispatch(toggleCartHidden()),
   fetchUserCartStart: () => dispatch(fetchUserCartStart()),
+  toggleUserOptionsHidden: () => dispatch(toggleUserOptionsHidden()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
