@@ -93,6 +93,12 @@
     position: absolute;
     background-color: #333;
     z-index: 1;
+
+    display: none;
+  }
+
+  &:hover > &__content {
+    display: block;
   }
 
   &__option {

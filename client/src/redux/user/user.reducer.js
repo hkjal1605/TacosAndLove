@@ -8,6 +8,7 @@ const INITIALSTATE = {
   hidden: true,
   mailSent: false,
   showLoader: false,
+  updateProgress: false,
 };
 
 const MySwal = withReactContent(Swal);
@@ -106,6 +107,33 @@ const userReducer = (state = INITIALSTATE, action) => {
       return {
         ...state,
         mailSent: false,
+      };
+    case UserActionTypes.UPDATE_CUSTOMER_DETAILS_START:
+      return {
+        ...state,
+        updateProgress: true,
+      };
+    case UserActionTypes.UPDATE_CUSTOMER_DETAILS_SUCCESS:
+      MySwal.fire({
+        title: "Sucessfully Updated Details!",
+        timer: 4000,
+        timerProgressBar: false,
+      });
+      return {
+        ...state,
+        updateProgress: false,
+        currentUser: action.payload,
+      };
+    case UserActionTypes.UPDATE_CUSTOMER_DETAILS_FAILURE:
+      MySwal.fire({
+        title: action.payload,
+        timer: 5000,
+        timerProgressBar: false,
+      });
+      return {
+        ...state,
+        updateProgress: false,
+        errorMessage: action.payload,
       };
     default:
       return state;

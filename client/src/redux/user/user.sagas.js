@@ -11,6 +11,8 @@ import {
   forgotPasswordSuccess,
   forgotPasswordFailure,
   resetPasswordFailure,
+  updateUserDetailsSuccess,
+  updateUserDetailsFailure,
 } from "./user.actions";
 
 import { fetchUserCartSuccess } from "../cart/cart.actions";
@@ -92,6 +94,19 @@ export function* resetPasswordAsync({ payload }) {
   }
 }
 
+export function* updateCustomerDetailsAsync({ payload }) {
+  try {
+    const user = yield axios.patch(
+      `api/v1/customer/updateMe`,
+      payload.formData
+    );
+
+    yield put(updateUserDetailsSuccess(user.data.data.user));
+  } catch (err) {
+    yield put(updateUserDetailsFailure(err.response.data.message));
+  }
+}
+
 export function* loginUserStart() {
   yield takeLatest(UserActionTypes.LOGIN_CURRENT_USER_START, loginUserAsync);
 }
@@ -112,6 +127,13 @@ export function* resetPasswordStart() {
   yield takeLatest(UserActionTypes.RESET_PASSWORD, resetPasswordAsync);
 }
 
+export function* updateCustomerDetails() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_CUSTOMER_DETAILS_START,
+    updateCustomerDetailsAsync
+  );
+}
+
 export function* userSagas() {
   yield all([
     call(loginUserStart),
@@ -119,5 +141,6 @@ export function* userSagas() {
     call(logoutUserStart),
     call(forgotPasswordStart),
     call(resetPasswordStart),
+    call(updateCustomerDetails),
   ]);
 }

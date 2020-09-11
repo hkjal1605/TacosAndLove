@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { createStructuredSelector } from "reselect";
 
@@ -136,7 +137,9 @@ class PasswordReset extends React.Component {
           </div>
         )}
         <div className="buttons-group" onClick={this.cancelProcess}>
-          <h3 className="cancel-process">Cancel Process</h3>
+          <Link to="/login" className="link">
+            <h3 className="cancel-process">Cancel Process</h3>
+          </Link>
           {showLoader ? <div class="loader1"></div> : null}
         </div>
       </div>

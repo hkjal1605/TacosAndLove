@@ -11,8 +11,17 @@ router.route("/logout").get(authController.logout);
 router.route("/forgotPassword").post(authController.forgotPassword);
 router.route("/resetPassword/:token").patch(authController.resetPassword);
 
+router.use(authController.protect);
+
+router.route("/cart").get(customerController.getUserCart);
+
+router.route("/me").get(customerController.getMe);
 router
-  .route("/cart")
-  .get(authController.protect, customerController.getUserCart);
+  .route("/updateMe")
+  .patch(
+    customerController.updateCustomerPhoto,
+    customerController.resizeCustomerPhoto,
+    customerController.updateMe
+  );
 
 module.exports = router;

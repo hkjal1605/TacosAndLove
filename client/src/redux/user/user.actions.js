@@ -69,3 +69,18 @@ export const resetPasswordFailure = (err) => ({
 export const cancelResetPasswordProcess = () => ({
   type: UserActionTypes.CANCEL_RESET_PASSWORD_PROCESS,
 });
+
+export const updateUserDetailsStart = (formData) => ({
+  type: UserActionTypes.UPDATE_CUSTOMER_DETAILS_START,
+  payload: { formData },
+});
+
+export const updateUserDetailsSuccess = (user) => ({
+  type: UserActionTypes.UPDATE_CUSTOMER_DETAILS_SUCCESS,
+  payload: user,
+});
+
+export const updateUserDetailsFailure = (err) => ({
+  type: UserActionTypes.UPDATE_CUSTOMER_DETAILS_FAILURE,
+  payload: err,
+});

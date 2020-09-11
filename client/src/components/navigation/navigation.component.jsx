@@ -75,65 +75,60 @@ class Navigation extends React.Component {
     return (
       <div className="navigation">
         <div className="menu-dropdown">
-          <h5
-            className="navigation__option menu-dropdown__btn"
-            onClick={this.toggleMenuDropdown}
-          >
-            Menu
-          </h5>
+          <Link to="/" className="link">
+            <h5 className="navigation__option menu-dropdown__btn">Menu</h5>
+          </Link>
 
-          {this.state.dropdownHidden ? null : (
-            <div className="menu-dropdown__content">
-              <Link to="/menu/tacos" className="link">
-                <h5
-                  className="navigation__option menu-dropdown__option"
-                  onClick={this.toggleMenuDropdown}
-                >
-                  Tacos
-                </h5>
-              </Link>
-              <Link to="/menu/burritos" className="link">
-                <h5
-                  className="navigation__option menu-dropdown__option"
-                  onClick={this.toggleMenuDropdown}
-                >
-                  Burritos
-                </h5>
-              </Link>
-              <Link to="/menu/quesadilla" className="link">
-                <h5
-                  className="navigation__option menu-dropdown__option"
-                  onClick={this.toggleMenuDropdown}
-                >
-                  Quesadilla
-                </h5>
-              </Link>
-              <Link to="/menu/sides" className="link">
-                <h5
-                  className="navigation__option menu-dropdown__option"
-                  onClick={this.toggleMenuDropdown}
-                >
-                  Sides
-                </h5>
-              </Link>
-              <Link to="/menu/specialities" className="link">
-                <h5
-                  className="navigation__option menu-dropdown__option"
-                  onClick={this.toggleMenuDropdown}
-                >
-                  Specialities
-                </h5>
-              </Link>
-              <Link to="/menu/deserts" className="link">
-                <h5
-                  className="navigation__option menu-dropdown__option"
-                  onClick={this.toggleMenuDropdown}
-                >
-                  Deserts
-                </h5>
-              </Link>
-            </div>
-          )}
+          <div className="menu-dropdown__content">
+            <Link to="/menu/tacos" className="link">
+              <h5
+                className="navigation__option menu-dropdown__option"
+                onClick={this.toggleMenuDropdown}
+              >
+                Tacos
+              </h5>
+            </Link>
+            <Link to="/menu/burritos" className="link">
+              <h5
+                className="navigation__option menu-dropdown__option"
+                onClick={this.toggleMenuDropdown}
+              >
+                Burritos
+              </h5>
+            </Link>
+            <Link to="/menu/quesadilla" className="link">
+              <h5
+                className="navigation__option menu-dropdown__option"
+                onClick={this.toggleMenuDropdown}
+              >
+                Quesadilla
+              </h5>
+            </Link>
+            <Link to="/menu/sides" className="link">
+              <h5
+                className="navigation__option menu-dropdown__option"
+                onClick={this.toggleMenuDropdown}
+              >
+                Sides
+              </h5>
+            </Link>
+            <Link to="/menu/specialities" className="link">
+              <h5
+                className="navigation__option menu-dropdown__option"
+                onClick={this.toggleMenuDropdown}
+              >
+                Specialities
+              </h5>
+            </Link>
+            <Link to="/menu/deserts" className="link">
+              <h5
+                className="navigation__option menu-dropdown__option"
+                onClick={this.toggleMenuDropdown}
+              >
+                Deserts
+              </h5>
+            </Link>
+          </div>
         </div>
         {currentUser ? (
           <div className="navigation__user-side">

@@ -44,10 +44,6 @@ const customerSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     default: new ObjectID(),
   },
-  orders: {
-    type: mongoose.Schema.ObjectId,
-    default: new ObjectID(),
-  },
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpiresAt: Date,
