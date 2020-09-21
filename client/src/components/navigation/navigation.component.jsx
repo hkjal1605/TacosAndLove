@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { logoutCurrentUserStart } from "../../redux/user/user.actions";
+import { logoutEmployeeStart } from "../../redux/employee/employee.actions";
 import { toggleCartHidden } from "../../redux/cart/cart.actions";
 import { toggleUserOptionsHidden } from "../../redux/user/user.actions";
 import {
   selectCurrentUser,
   selectIsUserDropdownHidden,
 } from "../../redux/user/user.selector";
+import { selectCurrentEmployee } from "../../redux/employee/employee.selector";
 import {
   selectUserCart,
   selectIsCartHidden,
@@ -60,8 +62,10 @@ class Navigation extends React.Component {
   render() {
     const {
       currentUser,
+      currentEmployee,
       userCart,
       logoutCurrentUserStart,
+      logoutEmployeeStart,
       isCartHidden,
       isUserHidden,
     } = this.props;
@@ -130,9 +134,9 @@ class Navigation extends React.Component {
             </Link>
           </div>
         </div>
-        {currentUser ? (
+        {currentUser || currentEmployee ? (
           <div className="navigation__user-side">
-            {userCart ? (
+            {currentUser && userCart ? (
               <div
                 className="navigation__user-side--cart"
                 onClick={this.cartHidden}
@@ -146,24 +150,56 @@ class Navigation extends React.Component {
                 {isCartHidden ? <CartDropdown cart={userCart} /> : null}
               </div>
             ) : null}
-            <h4 className="navigation__option" onClick={logoutCurrentUserStart}>
-              LOG OUT
-            </h4>
+            {currentUser ? (
+              <h4
+                className="navigation__option"
+                onClick={logoutCurrentUserStart}
+              >
+                LOG OUT
+              </h4>
+            ) : (
+              <h4 className="navigation__option" onClick={logoutEmployeeStart}>
+                LOG OUT
+              </h4>
+            )}
+
             <div
               className="navigation__user-side--details"
               onClick={this.userHidden}
             >
-              {currentUser.photo ? (
-                <img
-                  src={`/img/user/${currentUser.photo}`}
-                  alt="user"
-                  className="navigation__user-side--photo"
-                />
+              {currentUser ? (
+                <div className="navigation__user-side--details">
+                  <img
+                    src={`/img/user/${currentUser.photo}`}
+                    alt="user"
+                    className="navigation__user-side--photo"
+                  />
+
+                  <h4 className="navigation__option">
+                    {currentUser.name.split(" ")[0]}
+                  </h4>
+                  {isUserHidden ? <UserDropdown /> : null}
+                </div>
               ) : null}
-              <h4 className="navigation__option">
-                {currentUser.name.split(" ")[0]}
-              </h4>
-              {isUserHidden ? <UserDropdown /> : null}
+
+              {currentEmployee ? (
+                <div>
+                  <Link
+                    to="/admin/main"
+                    className="link navigation__user-side--details"
+                  >
+                    <img
+                      src={`/img/user/${currentEmployee.photo}`}
+                      alt="user"
+                      className="navigation__user-side--photo"
+                    />
+
+                    <h4 className="navigation__option">
+                      {currentEmployee.name.split(" ")[0]}
+                    </h4>
+                  </Link>
+                </div>
+              ) : null}
             </div>
           </div>
         ) : (
@@ -183,6 +219,7 @@ class Navigation extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  currentEmployee: selectCurrentEmployee,
   userCart: selectUserCart,
   isCartHidden: selectIsCartHidden,
   isUserHidden: selectIsUserDropdownHidden,
@@ -190,6 +227,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
   logoutCurrentUserStart: () => dispatch(logoutCurrentUserStart()),
+  logoutEmployeeStart: () => dispatch(logoutEmployeeStart()),
   toggleCartHidden: () => dispatch(toggleCartHidden()),
   fetchUserCartStart: () => dispatch(fetchUserCartStart()),
   toggleUserOptionsHidden: () => dispatch(toggleUserOptionsHidden()),

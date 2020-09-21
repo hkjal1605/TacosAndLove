@@ -8,7 +8,6 @@ import "./home-page.styles.scss";
 
 import Header from "../../components/header/header.component";
 import MenuDisplay from "../../components/menu-display/menu-display.component";
-
 import { fetchMenuStart } from "../../redux/menu/menu.actions";
 import { selectIsMenuListFetching } from "../../redux/menu/menu.selector";
 

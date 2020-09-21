@@ -22,6 +22,7 @@ const desertsRouter = require("./routes/desertsRouter");
 const sidesRouter = require("./routes/sidesRouter");
 const specialitiesRouter = require("./routes/specialitiesRouter");
 const bookingRouter = require("./routes/bookingRouter");
+const employeeRouter = require("./routes/employeeRouter");
 
 const bookingController = require("./controllers/bookingController");
 
@@ -85,6 +86,7 @@ app.use("/api/v1/quesadilla", quesadillaRouter);
 app.use("/api/v1/specialities", specialitiesRouter);
 app.use("/api/v1/deserts", desertsRouter);
 app.use("/api/v1/booking", bookingRouter);
+app.use("/api/v1/employees", employeeRouter);
 
 // Serving static files
 if (process.env.NODE_ENV === "production") {

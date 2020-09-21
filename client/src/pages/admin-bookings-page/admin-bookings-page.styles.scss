@@ -1,0 +1,20 @@
+.admin-bookings-page {
+  &__heading {
+    position: relative;
+    font-family: "Lato", serif;
+    font-size: 3rem;
+    color: #333;
+    font-weight: 400;
+  }
+
+  &__back-btn {
+    position: absolute;
+    padding: 0.3rem 0.8rem;
+    font-size: 1.8rem;
+    background-color: #ffc013;
+    border-radius: 2rem;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

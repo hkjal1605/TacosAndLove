@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { Link } from "react-router-dom";
 
 import "./profile-preview.styles.scss";
 
@@ -47,23 +48,25 @@ class ProfilePreview extends React.Component {
       <div className="account-details">
         <h2 className="account-details__heading">YOUR ACCOUNT DETAILS</h2>
         <form className="account-details__form" onSubmit={this.handleSubmit}>
-          <FormInput
-            name="name"
-            type="name"
-            placeholder={currentUser.name}
-            value={this.state.name}
-            label="Name"
-            handleChange={this.handleChange}
-          />
+          <div className="account-details__input-group">
+            <FormInput
+              name="name"
+              type="name"
+              placeholder={currentUser.name}
+              value={this.state.name}
+              label="Name"
+              handleChange={this.handleChange}
+            />
 
-          <FormInput
-            name="email"
-            type="email"
-            placeholder={currentUser.email}
-            value={this.state.email}
-            label="Email"
-            handleChange={this.handleChange}
-          />
+            <FormInput
+              name="email"
+              type="email"
+              placeholder={currentUser.email}
+              value={this.state.email}
+              label="Email"
+              handleChange={this.handleChange}
+            />
+          </div>
 
           <div className="account-details__photo-container">
             <img
@@ -78,11 +81,19 @@ class ProfilePreview extends React.Component {
             />
           </div>
 
-          <CustomButton
-            type="submit"
-            btnClass="account-details__button"
-            content="Save Settings"
-          />
+          <div className="account-details__button-group">
+            <CustomButton
+              type="submit"
+              btnClass="account-details__button"
+              content="Save Changes"
+            />
+            <Link to="/my-orders" className="link">
+              <CustomButton
+                content="Your Orders"
+                btnClass="account-details__orders-button"
+              />
+            </Link>
+          </div>
         </form>
       </div>
     );

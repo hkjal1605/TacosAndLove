@@ -32,7 +32,7 @@ module.exports = class Email {
   }
 
   // Send the actual email
-  async send(subject, passReset) {
+  async send(subject, passReset, removalLetter) {
     const mailOptions = {
       from: this.from,
       to: this.to,
@@ -40,7 +40,11 @@ module.exports = class Email {
       text: passReset
         ? `Here is your password reset token: ${this.resetToken}. Copy this token and past it in the website form`
         : null,
-      html: passReset ? null : { path: `./welcome.html` },
+      html: passReset
+        ? null
+        : removalLetter
+        ? { path: "./removalLetter.html" }
+        : { path: `./welcome.html` },
     };
 
     await this.newTransport().sendMail(mailOptions);
@@ -52,5 +56,13 @@ module.exports = class Email {
 
   async sendPasswordReset() {
     await this.send("Your password reset token", true);
+  }
+
+  async sendRemovalLetter() {
+    await this.send(
+      "You term of service to the TACOS&LOVE has come to end!",
+      false,
+      true
+    );
   }
 };

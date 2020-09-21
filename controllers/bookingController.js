@@ -2,6 +2,7 @@ const catchAsync = require("../utils/catchAsync");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Cart = require("../models/cartModel");
 const Booking = require("../models/bookingModel");
+const handlerFactory = require("./handlerFactory");
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const cart = await Cart.findById(req.params.cartId);
@@ -104,3 +105,5 @@ exports.getUserBookings = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.getAllBookings = handlerFactory.getAll(Booking);

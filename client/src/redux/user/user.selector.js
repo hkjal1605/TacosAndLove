@@ -21,3 +21,8 @@ export const selectShowLoader = createSelector(
   [selectUser],
   (user) => user.showLoader
 );
+
+export const selectIsUserLogging = createSelector(
+  [selectUser],
+  (user) => user.isLogging
+);

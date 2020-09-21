@@ -5,6 +5,7 @@ import withReactContent from "sweetalert2-react-content";
 
 const INITIALSTATE = {
   currentUser: null,
+  isLogging: false,
   hidden: true,
   mailSent: false,
   showLoader: false,
@@ -15,6 +16,16 @@ const MySwal = withReactContent(Swal);
 
 const userReducer = (state = INITIALSTATE, action) => {
   switch (action.type) {
+    case UserActionTypes.LOGIN_CURRENT_USER_START:
+      return {
+        ...state,
+        isLogging: true,
+      };
+    case UserActionTypes.SIGNUP_CURRENT_USER_START:
+      return {
+        ...state,
+        isLogging: true,
+      };
     case UserActionTypes.SET_CURRENT_USER:
       MySwal.fire({
         title: "Sucessfully Logged In!",
@@ -24,6 +35,7 @@ const userReducer = (state = INITIALSTATE, action) => {
       return {
         ...state,
         currentUser: action.payload,
+        isLogging: false,
         mailSent: false,
       };
     case UserActionTypes.LOGIN_CURRENT_USER_FAILURE:
@@ -34,6 +46,7 @@ const userReducer = (state = INITIALSTATE, action) => {
       });
       return {
         ...state,
+        isLogging: false,
         errorMessage: action.payload,
       };
     case UserActionTypes.SIGNUP_CURRENT_USER_FAILURE:
@@ -44,6 +57,7 @@ const userReducer = (state = INITIALSTATE, action) => {
       });
       return {
         ...state,
+        isLogging: false,
         errorMessage: action.payload,
       };
     case UserActionTypes.LOGOUT_CURRENT_USER_START:

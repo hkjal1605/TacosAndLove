@@ -1,0 +1,12 @@
+.admin-page {
+  background-image: linear-gradient(to right, #ffdc79, #fff2ce);
+  margin-top: -2rem;
+  padding: 4rem 2rem;
+
+  &__cards {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}

@@ -2,6 +2,7 @@ const { promisify } = require("util");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const Customer = require("../models/customerModel");
+const Employee = require("../models/employeeModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const Cart = require("../models/cartModel");
@@ -84,6 +85,32 @@ exports.login = catchAsync(async (req, res, next) => {
   createSendToken(customer, 200, res);
 });
 
+exports.loginEmployee = catchAsync(async (req, res, next) => {
+  const { employeeId, password } = req.body;
+
+  // Check if email and password are provided
+  if (!employeeId || !password) {
+    return next(
+      new AppError("Please provide the employeeId and password!", 400)
+    );
+  }
+
+  // Check if the user exists and the password is correct
+  const employee = await Employee.findOne({
+    employeeId,
+  }).select("+password");
+
+  if (
+    !employee ||
+    !(await employee.correctPassword(password, employee.password))
+  ) {
+    return next(new AppError("Enter a valid employeeId and password", 401));
+  }
+
+  // Send back the status
+  createSendToken(employee, 200, res);
+});
+
 exports.logout = async (req, res, next) => {
   res.cookie("jwt", "LoggedOut", {
     expires: new Date(Date.now() + 1 * 1000),
@@ -116,7 +143,9 @@ exports.protect = catchAsync(async (req, res, next) => {
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
   // Check if user credentials have not changed
-  const freshUser = await Customer.findById(decoded.id);
+  const freshUser =
+    (await Customer.findById(decoded.id)) ||
+    (await Employee.findById(decoded.id));
 
   if (!freshUser) {
     return next(
@@ -136,7 +165,9 @@ exports.protect = catchAsync(async (req, res, next) => {
 });
 
 exports.restrictTo = (...roles) => {
+  console.log(roles);
   return (req, res, next) => {
+    console.log(req.user);
     if (!roles.includes(req.user.role)) {
       return next(
         new AppError(

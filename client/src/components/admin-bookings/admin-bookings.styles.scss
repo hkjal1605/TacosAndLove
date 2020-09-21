@@ -1,0 +1,122 @@
+.admin-bookings {
+  width: 100%;
+  padding: 4rem 0;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #333;
+
+    &--name {
+      text-align: center;
+      font-family: "Lato", sans-serif;
+      font-size: 2rem;
+      color: #333;
+      font-weight: 400;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    margin: 0.8rem 0;
+    box-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+
+    &--name {
+      text-align: center;
+      font-family: "Lato", sans-serif;
+      padding: 1.5rem 0;
+      font-size: 2rem;
+      color: #555;
+      font-weight: 400;
+    }
+  }
+
+  &__popup {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    @supports (-webkit-backdrop-filter: blur(10px)) or
+      (backdrop-filter: blur(10px)) {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:target {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &--content {
+      background-color: #fff;
+      box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 0.6rem;
+
+      transform: translate(-50%, -50%) scale(0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.4s;
+    }
+
+    &:target &--content {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    &--close {
+      color: #352700;
+      text-decoration: none;
+      line-height: 1;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      display: inline-block;
+      font-size: 4rem;
+    }
+  }
+}
+
+.booking-id {
+  flex: 1;
+}
+
+.date {
+  flex: 0.8;
+}
+
+.amount {
+  flex: 0.5;
+}
+
+.items {
+  width: 80%;
+  flex: 0.6;
+  cursor: pointer;
+  text-decoration: none;
+  color: #341f97;
+}
+
+.even {
+  background-color: rgba(#f6e58d, 0.3);
+}
+
+.odd {
+  background-color: rgba(#ed4c67, 0.3);
+}

@@ -62,7 +62,7 @@ exports.resizeCustomerPhoto = catchAsync(async (req, res, next) => {
 
   await fs.rename(
     `public/${req.file.filename}`,
-    `client/build/img/users/${req.file.filename}`,
+    `client/public/img/user/${req.file.filename}`,
     function (err) {
       console.log(err);
     }

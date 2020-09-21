@@ -50,7 +50,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       };
     case CartActionTypes.ADD_TO_CART_FAILURE:
       MySwal.fire({
-        title: action.payload,
+        title: "Please login to perform this action!",
         timer: 8000,
         timerProgressBar: false,
       });

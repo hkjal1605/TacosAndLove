@@ -47,3 +47,28 @@
     font-size: 1.6rem;
   }
 }
+
+.dual-ring-loader {
+  display: inline-block;
+  width: 5.5rem;
+  height: 5.5rem;
+}
+.dual-ring-loader:after {
+  content: " ";
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff2ce;
+  border-color: #fff2ce transparent #fff2ce transparent;
+  animation: dual-ring-loader 1.2s linear infinite;
+}
+@keyframes dual-ring-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
