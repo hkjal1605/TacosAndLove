@@ -1,14 +1,16 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 import "./item-card.styles.scss";
 
 import CustomButton from "../custom-button/custom-button.component";
 
 import { addToCartStart } from "../../redux/cart/cart.actions";
+import { selectCurrentEmployee } from "../../redux/employee/employee.selector";
 
-const ItemCard = ({ item, itemName, addToCartStart }) => {
+const ItemCard = ({ item, itemName, addToCartStart, currentEmployee }) => {
   return (
     <div
       className={
@@ -23,17 +25,23 @@ const ItemCard = ({ item, itemName, addToCartStart }) => {
         >{`(${item.fill})`}</h4>
       </div>
       <h5 className="item-card__price">&#8377;{` ${item.price}`}</h5>
-      <CustomButton
-        content="Add to Cart"
-        onClick={() => addToCartStart(itemName, item._id)}
-      />
+      {!currentEmployee ? (
+        <CustomButton
+          content="Add to Cart"
+          onClick={() => addToCartStart(itemName, item._id)}
+        />
+      ) : null}
     </div>
   );
 };
+
+const mapStateToProps = createStructuredSelector({
+  currentEmployee: selectCurrentEmployee,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addToCartStart: (itemName, itemId) =>
     dispatch(addToCartStart(itemName, itemId)),
 });
 
-export default connect(null, mapDispatchToProps)(ItemCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemCard);

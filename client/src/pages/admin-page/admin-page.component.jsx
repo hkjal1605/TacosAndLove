@@ -14,8 +14,12 @@ const AdminPage = () => {
         <Link to="/admin/bookings" className="link">
           <AdminCard type="orders" />
         </Link>
-        <AdminCard type="employees" />
-        <AdminCard type="kitchen" />
+        <Link to="/admin/employees" className="link">
+          <AdminCard type="employees" />
+        </Link>
+        <Link to="/admin/kitchen" className="link">
+          <AdminCard type="kitchen" />
+        </Link>
       </div>
     </div>
   );

@@ -1,0 +1,67 @@
+.admin-employees {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+
+  &__card {
+    height: 50rem;
+    padding: 2rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, #ffdb79, #ffedbd);
+
+    &--image {
+      height: 25rem;
+      width: 25rem;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+    }
+
+    &--name {
+      font-family: "Lato", sans-serif;
+      font-size: 3.8rem;
+      font-weight: 400;
+      color: #352700;
+    }
+
+    &--email {
+      font-family: "Lato", sans-serif;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #666;
+    }
+
+    &--role {
+      font-family: "Lato", sans-serif;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #352700;
+    }
+
+    &--salary {
+      font-family: "Lato", sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #352700;
+    }
+
+    &--update-btn {
+      margin-top: 2.6rem;
+      border-radius: 0.3rem;
+      padding: 0.6rem 1.5rem;
+      font-family: "Lato", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      background-color: #555;
+      color: #eee;
+    }
+  }
+}

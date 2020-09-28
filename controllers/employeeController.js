@@ -23,17 +23,7 @@ exports.updateEmployee = catchAsync(async (req, res, next) => {
     return next(new AppError("This route is not for changing passwords!", 400));
   }
 
-  const filteredBody = filterObject(req.body, "email", "name");
-
-  if (req.file) filteredBody.photo = req.file.filename;
-
-  const employee = await Employee.findById(req.params.id);
-
-  Object.keys(filteredBody).map((key) => {
-    employee[key] = filteredBody[key];
-  });
-
-  await employee.save();
+  await Employee.findByIdAndUpdate(req.params.id, req.body);
 
   res.status(200).send({
     status: "success",
