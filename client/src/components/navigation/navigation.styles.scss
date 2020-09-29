@@ -23,12 +23,20 @@
     &:hover {
       transform: translateY(-2px) scale(1.05);
     }
+
+    @media only screen and (max-width: 34.375em) {
+      padding: 0.8rem;
+    }
   }
 
   &__user-side {
     margin-right: 2rem;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 34.375em) {
+      margin-right: 0.8rem;
+    }
 
     &--cart {
       position: relative;
@@ -46,6 +54,10 @@
       fill: #eee !important;
       margin-right: 2rem;
       cursor: pointer;
+
+      // @media only screen and (max-width: 34.375em) {
+      //   margin-right: 0.8rem;
+      // }
     }
 
     &--quantity {
@@ -76,6 +88,11 @@
       border-radius: 2000px;
       margin-left: 1.5rem;
       margin-right: -0.6rem;
+
+      @media only screen and (max-width: 34.375em) {
+        margin-left: 0.5rem;
+        margin-right: -0.2rem;
+      }
     }
   }
 }
@@ -87,6 +104,10 @@
   &__btn {
     padding: 1.5rem 3rem;
     cursor: pointer;
+
+    @media only screen and (max-width: 34.375em) {
+      padding: 1.5rem;
+    }
   }
 
   &__content {
@@ -99,6 +120,10 @@
 
   &:hover > &__content {
     display: block;
+
+    @media only screen and (max-width: 62.5em) {
+      display: none;
+    }
   }
 
   &__option {

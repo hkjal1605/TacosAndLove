@@ -53,7 +53,7 @@ class MenuPreview extends React.Component {
             <img
               src={`/img/${itemList[2].image}`}
               alt="Menu Item"
-              className="menu-preview__header--image"
+              className="menu-preview__header--image image-3"
             />
           </div>
         ) : null}

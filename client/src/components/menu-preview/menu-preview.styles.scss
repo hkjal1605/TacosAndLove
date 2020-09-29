@@ -9,6 +9,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 3px;
 
+    @media only screen and (max-width: 37.5em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     &--image {
       height: 100%;
       width: 100%;
@@ -48,6 +52,20 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5rem;
+    grid-gap: 2rem;
+
+    @media only screen and (max-width: 46.875em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: 30em) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.image-3 {
+  @media only screen and (max-width: 37.5em) {
+    display: none;
   }
 }

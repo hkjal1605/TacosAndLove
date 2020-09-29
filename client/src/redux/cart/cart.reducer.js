@@ -3,6 +3,8 @@ import CartActionTypes from "./cart.types";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
+import { toggleUserOptionsHidden } from "../user/user.actions";
+
 const INITIAL_STATE = {
   cart: null,
   isFetching: false,

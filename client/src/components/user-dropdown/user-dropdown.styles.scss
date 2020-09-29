@@ -8,6 +8,11 @@
   right: 2.3rem;
   z-index: 1000;
 
+  @media only screen and (max-width: 56.25em) {
+    top: 9.4rem;
+    right: 0.3rem;
+  }
+
   &__option-container {
     width: 100%;
     padding: 1rem 1.5rem;

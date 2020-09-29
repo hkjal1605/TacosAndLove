@@ -1,5 +1,5 @@
 .login-page {
-  height: calc(100vh - 14rem);
+  height: 70rem;
   background-image: linear-gradient(
       to right bottom,
       rgba(#eee, 0.7),
@@ -8,4 +8,8 @@
     url("./background.webp");
   background-size: cover;
   background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,6 +1,6 @@
 .employee-update {
   width: 80vw;
-  height: 85vh;
+  height: 65rem;
   background-color: #130e00;
   padding: 4rem;
   box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
@@ -10,7 +10,17 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: 53.125em) {
+    width: 98vw;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    flex-direction: column;
+    height: 105rem;
+  }
+
   &__heading {
+    width: 100%;
     position: absolute;
     top: 3rem;
     left: 50%;
@@ -27,6 +37,13 @@
     outline: 3px solid #ffdb79;
     outline-offset: 1rem;
     margin-right: 5rem;
+
+    @media only screen and (max-width: 37.5em) {
+      margin-right: 0;
+      margin-top: 15rem;
+      flex: 0;
+      width: 100%;
+    }
 
     &--image {
       height: 25rem;
@@ -47,18 +64,29 @@
   &__right {
     flex: 1.2;
     margin-top: 5rem;
+
+    @media only screen and (max-width: 53.125em) {
+      flex: 1;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      flex: 0;
+      width: 100%;
+    }
   }
 
   &__buttons-group {
     margin-top: 3rem;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   &__button {
     font-size: 2rem;
     padding: 1rem 1.6rem;
+    margin-top: 1rem;
   }
 }
 

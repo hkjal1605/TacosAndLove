@@ -8,7 +8,9 @@ const BookingsPreview = ({ bookings }) => {
   return (
     <div className="bookings-preview">
       {bookings.map((booking) => (
-        <BookingCard key={booking._id} booking={booking} />
+        <div className="bookings-preview__container">
+          <BookingCard key={booking._id} booking={booking} />
+        </div>
       ))}
     </div>
   );

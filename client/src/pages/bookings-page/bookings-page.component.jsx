@@ -29,14 +29,14 @@ class BookingsPage extends React.Component {
           <h5 className="bookings-page__sub-heading">
             Total Bookings: {bookings ? bookings.length : null}
           </h5>
-          <div className="bookings-page__content">
-            {bookings ? (
-              <BookingsPreviewWithSpinner
-                isLoading={isBookingsLoading}
-                bookings={bookings}
-              />
-            ) : null}
-          </div>
+        </div>
+        <div className="bookings-page__content">
+          {bookings ? (
+            <BookingsPreviewWithSpinner
+              isLoading={isBookingsLoading}
+              bookings={bookings}
+            />
+          ) : null}
         </div>
       </div>
     );

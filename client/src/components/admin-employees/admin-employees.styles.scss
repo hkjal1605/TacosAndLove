@@ -4,6 +4,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
 
+  @media only screen and (max-width: 43.75em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   &__card {
     height: 50rem;
     padding: 2rem 0;

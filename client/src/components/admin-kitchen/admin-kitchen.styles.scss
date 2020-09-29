@@ -2,6 +2,10 @@
   padding: 3rem 2rem;
   padding-bottom: 0;
 
+  @media only screen and (max-width: 40.625em) {
+    padding: 3rem 0;
+  }
+
   &__menu-list {
     display: flex;
     flex-direction: column;
@@ -21,11 +25,18 @@
     margin-bottom: 2rem;
     cursor: pointer;
 
+    @media only screen and (max-width: 40.625em) {
+      width: 95%;
+    }
+
     &--image {
-      flex: 0.5;
       height: 12rem;
       object-fit: cover;
       border-radius: 5px;
+
+      @media only screen and (max-width: 31.25em) {
+        width: 25%;
+      }
     }
 
     &--name {

@@ -27,7 +27,7 @@ class AdminBookings extends React.Component {
           <h4 className="admin-bookings__title--name booking-id">Order Id</h4>
           <h4 className="admin-bookings__title--name date">Ordered At</h4>
           <h4 className="admin-bookings__title--name amount">Amount</h4>
-          <h4 className="admin-bookings__title--name items">Customer/Items</h4>
+          <h4 className="admin-bookings__title--name items">Details</h4>
         </div>
         {bookings
           ? bookings.map((booking, i) => (

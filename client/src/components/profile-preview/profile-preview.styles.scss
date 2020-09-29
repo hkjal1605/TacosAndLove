@@ -1,10 +1,18 @@
 .account-details {
   width: 80vw;
-  height: 80vh;
+  height: 60rem;
   background-color: #130e00;
   padding: 4rem;
   box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
   border-radius: 1rem;
+
+  @media only screen and (max-width: 43.75em) {
+    width: 98vw;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    height: 85rem;
+  }
 
   &__heading {
     font-family: "Lato", sans-serif;
@@ -14,15 +22,26 @@
   }
 
   &__form {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     margin-top: 4rem;
+
+    @media only screen and (max-width: 31.25em) {
+      flex-direction: column;
+    }
   }
 
   &__input-group {
+    width: 100%;
     flex: 1.4;
+
+    @media only screen and (max-width: 31.25em) {
+      margin-bottom: 2rem;
+      flex: 1;
+    }
   }
 
   &__photo-container {
@@ -31,6 +50,10 @@
     outline: 1px solid #ffdb79;
     outline-offset: 1rem;
     flex: 1;
+
+    @media only screen and (max-width: 31.25em) {
+      margin-left: 0;
+    }
 
     &--photo {
       height: 20rem;

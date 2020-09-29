@@ -46,11 +46,32 @@ class Navigation extends React.Component {
   }
 
   cartHidden = () => {
-    this.props.toggleCartHidden();
+    const {
+      toggleUserOptionsHidden,
+      toggleCartHidden,
+      isUserHidden,
+    } = this.props;
+
+    if (!isUserHidden) {
+      toggleCartHidden();
+    } else {
+      toggleUserOptionsHidden();
+      toggleCartHidden();
+    }
   };
 
   userHidden = () => {
-    this.props.toggleUserOptionsHidden();
+    const {
+      toggleUserOptionsHidden,
+      toggleCartHidden,
+      isCartHidden,
+    } = this.props;
+    if (!isCartHidden) {
+      toggleUserOptionsHidden();
+    } else {
+      toggleUserOptionsHidden();
+      toggleCartHidden();
+    }
   };
 
   toggleMenuDropdown = () => {
